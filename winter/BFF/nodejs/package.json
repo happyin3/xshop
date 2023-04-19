@@ -1,0 +1,21 @@
+{
+  "name": "summer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.13",
+    "@grpc/proto-loader": "^0.7.6",
+    "etcd3": "^1.1.0",
+    "koa": "^2.14.1",
+    "koa-route": "^3.2.0",
+    "koa-router": "^12.0.0",
+    "path": "^0.12.7"
+  }
+}
