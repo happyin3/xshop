@@ -12,7 +12,8 @@ import (
 func main() {
 	app := fiber.New()
 
-	app.Get("/hello/:name", product.Hello)
+	app.Post("/product/:name", product.Create)
+	app.Get("/product/:id", product.Detail)
 
 	log.Fatal(app.Listen(":3000"))
 

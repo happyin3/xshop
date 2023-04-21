@@ -19,5 +19,18 @@ func (s *Service) Create(ctx context.Context, in *pb.CreateRequest) (*pb.CreateR
 		Status: in.Status,
 	}
 	data.DbConn.Create(&newProduct)
-	return &pb.CreateReply{Id: 1}, nil
+	return &pb.CreateReply{Id: newProduct.Id}, nil
+}
+
+func (s *Service) Detail(ctx context.Context, in *pb.DetailRequest) (*pb.DetailReply, error) {
+	d := data.Product{Id: in.Id}
+	data.DbConn.First(&d)
+	return &pb.DetailReply{
+		Id:     d.Id,
+		Name:   d.Name,
+		Desc:   d.Desc,
+		Stock:  d.Stock,
+		Amount: d.Amount,
+		Status: d.Status,
+	}, nil
 }

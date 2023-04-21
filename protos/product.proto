@@ -6,46 +6,47 @@ option go_package = "./;product";
 
 // 产品创建
 message CreateRequest {
-    string Name = 1;
-    string Desc = 2;
-    int32 Stock = 3;
-    int32 Amount = 4;
-    int32 Status = 5;
+    string name = 1;
+    string desc = 2;
+    int32 stock = 3;
+    int32 amount = 4;
+    int32 status = 5;
 }
 message CreateReply {
-    int64 id = 1;
+    int32 id = 1;
 }
 
 // 产品修改
 message UpdateRequest {
-    int64 id = 1;
-    string Name = 2;
-    string Desc = 3;
-    int64 Stock = 4;
-    int64 Amount = 5;
-    int64 Status = 6;
+    int32 id = 1;
+    string name = 2;
+    string desc = 3;
+    int32 stock = 4;
+    int32 amount = 5;
+    int32 status = 6;
 }
 message UpdateReply {}
 
 // 产品删除
 message DeleteRequest {
-    int64 id = 1;
+    int32 id = 1;
 }
 message DeleteReply {}
 
 // 产品详情
 message DetailRequest {
-    int64 id = 1;
+    int32 id = 1;
 }
 message DetailReply {
-    int64 id = 1;
-    string Name = 2;
-    string Desc = 3;
-    int64 Stock = 4;
-    int64 Amount = 5;
-    int64 Status = 6;
+    int32 id = 1;
+    string name = 2;
+    string desc = 3;
+    int32 stock = 4;
+    int32 amount = 5;
+    int32 status = 6;
 }
 
 service Product {
     rpc Create (CreateRequest) returns (CreateReply) {}
+    rpc Detail (DetailRequest) returns (DetailReply) {}
 }
